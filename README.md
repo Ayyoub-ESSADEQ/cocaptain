@@ -24,7 +24,7 @@
 7. **Secure and Private** : The extension prioritizes privacy and data security. The power of our extension is it doesn't rely on any third party beside chatgpt webapp, which means that you are literally using chatgpt in vscode.
 
 # Instructions
-- install the **chatgpt-connect** in Chrome.
+- install the **chatgpt-connect** in Chrome link : https://chrome.google.com/webstore/detail/chatgpt-connect/mkdbpdaffmcbjmeeoieafacnbllimlfe?hl=fr.
 - install the **Cocaptain** vscode extension (make sure to click on the chat icon to start the conversation and to be able to connect with **chatgpt-connect**).
 - Make sure that the chatgpt-connect is connected.
 
