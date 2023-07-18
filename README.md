@@ -42,3 +42,8 @@
 - When using chatgpt in the active text editor make sure to ask he to bring only the script in one codeblock.
 - If you want to run a script right from the chat panel, you should make sure that the required dependencies and requirement are met (for example to run javascript you need to have Node js installed).
 - To clear the conversation you just delete the content of chatGPT.json file.
+
+# Note !!
+- For now the extension could work only in a where you are working in a project in vscode.
+- Make sure to start the extension in vscode
+- Make sure to connect chatgpt connect before asking any question
