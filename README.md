@@ -1,8 +1,5 @@
 # ChatGPT Integration for Visual Studio Code
 
-## Note : 
-- **Cocaptain** will be available after the review of **chatgpt-connect** chrome extension. **Chatgpt-connect** is now in the pending state.
-
 ## Description:
 
 - **Cocaptain** extension allows you to connect to ChatGPT directly from within your Visual Studio Code editor, enabling you to leverage its advanced natural language processing capabilities without leaving your coding environment.
