@@ -28,6 +28,7 @@
 # Vscode Commands 
 - To assign a title to the coversation you having with chatgpt using the vscode command : `assign title to conversation` and enter the title you want to assign.
 - If you want to start a new conversation with chatgpt use vscode extension : `new conversation` and then you have to start asking chatgpt in the new context.
+- In version 1.0.4 you could access those commands from the context menu in the webview of cocaptain.
 - To ask chatgpt from the active text editor respect this syntax : `OpeningComment + ask + question + ? +closingComent` then click `tab`. It autodetects the programming language you currently using. Here is an example : 
 
 !["demo"](./screenshots/python-demo.gif)
