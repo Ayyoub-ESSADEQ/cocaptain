@@ -1,0 +1,337 @@
+:root {
+    --border-radius: 5px;
+    --background-color: var(--vscode-sideBar-background);
+    --text-color : var(--vscode-editor-foreground);
+    --margin-bottom: -10px;
+    --padding: 5px;
+    --padding-answer-card: 10px;
+    --border-radius-answer: 5px;
+    --font-color-answer: var(--vscode-editor-foreground);
+    --background-answer-color: var(--vscode-editor-background);
+    --font-size: 13px;
+
+    --question-padding: 10px;
+    --question-border-radius: 5px;
+    --question-bg-color: var(--vscode-input-background);
+
+    --card-width: 100%;
+
+    --frame-bg-color: var(--vscode-statusBar-background);
+    --frame-font-color : var(--vscode-banner-foreground);
+
+    --message-font-color: var(--vscode-input-foreground);
+    --message-send: 30px;
+    --message-font-size: 14px;
+    --message-bg-color: var(--vscode-input-background);
+    --message-card-bg-color: var(--vscode-sideBar-background);
+
+    --error-bg-color: rgba(190, 108, 108, .73);
+    --shadow-color : var(--vscode-widget-shadow);
+    --icon-size: 18px;
+    --icon-color: white;
+    --border-color : var(--vscode-sideBar-border);
+    --border-width : 1px;
+}
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(./Montserrat-Regular.ttf)
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0
+}
+
+body {
+    background-color: var(--background-color);
+    color: #fff;
+    padding: 8px;
+    font-size: var(--font-size);
+    font-family: Montserrat-Regular;
+    max-width: var(--card-width)
+}
+
+#previousStack {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 5px;
+}
+
+#stack {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 80px
+}
+
+.codeBlock {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden
+}
+
+.codeBox {
+    overflow-x: hidden
+}
+
+.codeBox :hover {
+    overflow-x: visible
+}
+
+.heading {
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+    margin-bottom: var(--margin-bottom);
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    color: #fff !important
+}
+
+.copy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 28px;
+    width: 28px;
+    border-radius: 3px;
+    user-select: none
+}
+
+.copy:hover {
+    cursor: pointer;
+    background-color: #fff;
+    background-color: #ffffff1d
+}
+
+.answerCard {
+    background-color: var(--background-answer-color);
+    padding: var(--padding-answer-card);
+    border-bottom-right-radius: var(--border-radius-answer);
+    border-bottom-left-radius: var(--border-radius-answer);
+    color: var(--font-color-answer);
+    border-style: solid;
+    border-top-style: none !important;
+    border-width: var(--border-width);
+    border-color: var(--border-color);
+}
+
+.questionCard {
+    padding: var(--question-padding);
+    border-bottom-left-radius: var(--question-border-radius);
+    border-bottom-right-radius: var(--question-border-radius);
+    background-color: var(--question-bg-color);
+    color : var(--font-color-answer);
+    border-style: solid;
+    border-top-style: none !important;
+    border-width: var(--border-width);
+    border-color: var(--border-color);
+
+}
+
+.frameHeader {
+    background-color: var(--frame-bg-color);
+    padding: var(--padding-answer-card);
+    border-top-left-radius: var(--border-radius-answer);
+    border-top-right-radius: var(--border-radius-answer);
+    border-color: var(--border-color);
+    border-style: solid;
+    border-bottom-style: none !important;
+    border-width: var(--border-width);
+}
+
+.askCard {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    min-height: var(--message-send);
+    width: var(--card-width);
+    background-color: var(--message-card-bg-color);
+    z-index: 101;
+    border-top-color: #868686;
+    border-top-style: solid;
+    border-width: 1px;
+    box-shadow: 0 -12px 10px #1c1c1c7b
+}
+
+.prompt-textarea-justifier {
+    display: flex;
+    align-items: center;
+    min-height: var(--message-send)
+}
+
+#prompt-textarea {
+    min-height: var(--message-font-size);
+    border-radius: 10px;
+    width: calc(var(--card-width) - var(--message-send) - 23px);
+    font-size: var(--message-font-size);
+    max-height: 100px;
+    margin-left: 3px
+}
+
+#prompt-textarea:focus {
+    outline: none
+}
+
+#prompt-textarea:empty:before {
+    cursor: text;
+    content: "Send a message.";
+    position: absolute;
+    color: var(--message-font-color);
+}
+
+.sendMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--message-send);
+    width: var(--message-send);
+    border-radius: 10px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px
+}
+
+.sendMessage:hover {
+    background-color: #7878786e
+}
+
+.overflow-controller {
+    width: 100%;
+    max-height: 200px;
+    min-height: var(--message-send);
+    background-color: var(--message-bg-color);
+    margin: 10px;
+    border-radius: 5px;
+    overflow: hidden
+}
+
+.overflow-controller::-webkit-scrollbar {
+    width: 4px;
+    height: 4px
+}
+
+.overflow-controller:hover {
+    overflow-y: auto !important
+}
+
+.errorCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--error-bg-color);
+    height: fit-content;
+    width: 100%;
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+    min-height: 40px;
+    border-radius: var(--border-radius);
+    outline-width: 1px;
+    outline-color: #eeacac;
+    outline-style: solid
+}
+
+.icon {
+    height: var(--icon-size);
+    width: var(--icon-size);
+    fill: var(--icon-color);
+    display: block
+}
+
+.iconPanel {
+    display: flex;
+    align-items: center;
+    row-gap: 2px
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px
+}
+
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px
+}
+
+::-webkit-scrollbar-thumb {
+    background: #595959;
+    border: 0px none #ffffff;
+    border-radius: 50px
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #e1e1e1
+}
+
+::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 50px
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #666666
+}
+
+::-webkit-scrollbar-track:active {
+    background: #333333
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent
+}
+
+.blocker{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: var(--background-color);
+    z-index: 300;
+    backdrop-filter: blur(2px);
+  }
+  
+  .warn{
+    display: flex;
+    justify-content: center;
+    height : fit-content;
+    width : 250px;
+    padding: 5px;
+    background-color: #E5FAFD;
+    color : var(--background-color);
+    border-radius: 5px;
+    gap : 15px;
+    filter: drop-shadow(0px 0px 20px #ffd8a171);
+  }
+  
+  .warnBtn {
+    width : 20px;
+    height : 20px;
+    background-color: red;
+  }
+  
+  .warnText{
+    width : 200px;
+    font-size : 12px;
+  }

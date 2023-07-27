@@ -4,7 +4,7 @@
 
 - **Cocaptain** extension allows you to connect to ChatGPT directly from within your Visual Studio Code editor, enabling you to leverage its advanced natural language processing capabilities without leaving your coding environment.
 
-![chatpanel](./screenshots/chat-panel-demo.gif)
+![chatpanel](https://github.com/Ayyoub-ESSADEQ/cocaptain/blob/main/screenshots/chat-panel-demo.gif?raw=true)
 
 ## Key Features:
 
@@ -21,32 +21,24 @@
 7. **Secure and Private** : The extension prioritizes privacy and data security. The power of our extension is it doesn't rely on any third party beside chatgpt webapp, which means that you are literally using chatgpt in vscode.
 
 # Instructions
-- install the **chatgpt-connect** in Chrome link : https://chrome.google.com/webstore/detail/chatgpt-connect/mkdbpdaffmcbjmeeoieafacnbllimlfe?hl=fr.
-- Make sure that your vscode is above version 1.60.0 .
+- install the **chatgpt-connect** in Chrome.
 - install the **Cocaptain** vscode extension (make sure to click on the chat icon to start the conversation and to be able to connect with **chatgpt-connect**).
 - Make sure that the chatgpt-connect is connected.
 
 # Vscode Commands 
 - To assign a title to the coversation you having with chatgpt using the vscode command : `assign title to conversation` and enter the title you want to assign.
 - If you want to start a new conversation with chatgpt use vscode extension : `new conversation` and then you have to start asking chatgpt in the new context.
-- In version 1.0.4 you could access those commands from the context menu in the webview of cocaptain.
 - To ask chatgpt from the active text editor respect this syntax : `OpeningComment + ask + question + ? +closingComent` then click `tab`. It autodetects the programming language you currently using. Here is an example : 
 
-!["demo"](./screenshots/python-demo.gif)
+!["demo"](https://github.com/Ayyoub-ESSADEQ/cocaptain/blob/main/screenshots/python-demo.gif?raw=true)
 
 # Tips & Tricks 
 - If you want to create a directory and you don't have time to do so, create a new powershell file, and there write something like : 
 
-!["demo"](./screenshots/powershell-demo.gif)
+!["demo"](https://github.com/Ayyoub-ESSADEQ/cocaptain/blob/main/screenshots/powershell-demo.gif?raw=true)
 
 
 - If there many dependencies that you want to install, do the same in powershell.
 - When using chatgpt in the active text editor make sure to ask he to bring only the script in one codeblock.
 - If you want to run a script right from the chat panel, you should make sure that the required dependencies and requirement are met (for example to run javascript you need to have Node js installed).
-- To clear the conversation you just delete the content of chatGPT.json file but leaves "[]" inside the json file.
-- In case something went wrong just rihgt click on the webview of the extension and reload the extension.
-
-# Note !!
-- For now the extension could work only in a where you are working in a project in vscode. 
-- Make sure to start the extension in vscode.
-- Make sure to connect chatgpt-connect before asking any question.
+- To clear the conversation you just delete the content of chatGPT.json file.
