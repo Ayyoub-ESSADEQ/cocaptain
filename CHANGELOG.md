@@ -24,3 +24,8 @@
 ## [1.0.6] - 2023-07-23
 ### Added
 - We add support for all vscode version above v1.60.0.
+
+## [1.1.0] - 2023-07-27
+### Added
+- We added the ability to comment code from the context menu of the active text editor.
+- We added the ability to complete the code using chatgpt from the context menu of the text editor (we will add more functionalities in the coming days)
