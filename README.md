@@ -22,6 +22,7 @@
 
 # Instructions
 - install the **chatgpt-connect** in Chrome link : https://chrome.google.com/webstore/detail/chatgpt-connect/mkdbpdaffmcbjmeeoieafacnbllimlfe?hl=fr.
+- Make sure that your vscode is above version 1.60.0 .
 - install the **Cocaptain** vscode extension (make sure to click on the chat icon to start the conversation and to be able to connect with **chatgpt-connect**).
 - Make sure that the chatgpt-connect is connected.
 
@@ -42,9 +43,10 @@
 - If there many dependencies that you want to install, do the same in powershell.
 - When using chatgpt in the active text editor make sure to ask he to bring only the script in one codeblock.
 - If you want to run a script right from the chat panel, you should make sure that the required dependencies and requirement are met (for example to run javascript you need to have Node js installed).
-- To clear the conversation you just delete the content of chatGPT.json file.
+- To clear the conversation you just delete the content of chatGPT.json file but leaves "[]" inside the json file.
+- In case something went wrong just rihgt click on the webview of the extension and reload the extension.
 
 # Note !!
-- For now the extension could work only in a where you are working in a project in vscode.
-- Make sure to start the extension in vscode
-- Make sure to connect chatgpt connect before asking any question
+- For now the extension could work only in a where you are working in a project in vscode. 
+- Make sure to start the extension in vscode.
+- Make sure to connect chatgpt-connect before asking any question.
