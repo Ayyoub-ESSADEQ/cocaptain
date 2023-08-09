@@ -31,6 +31,10 @@
 - To ask chatgpt from the active text editor respect this syntax : `OpeningComment + ask + question + ? +closingComent` then click `tab`. It autodetects the programming language you currently using. Here is an example : 
 
 !["demo"](https://github.com/Ayyoub-ESSADEQ/cocaptain/blob/main/screenshots/python-demo.gif?raw=true)
+- Code Complation : if you just started coding but you didn't know how to finish the rest of the code, just go to the context menu, under chatgpt you will find an option called complete code and voila you're done.
+- Comments generation : are you struggling to find the accurate words to comment your code ? We get you covered !! just open the context menu, under the option chatgpt you will find an option : `comment the selected code` and you're done.
+
+!["Cocaptain new features"](https://github.com/Ayyoub-ESSADEQ/cocaptain/blob/main/screenshots/cocaptain%20new%20features.gif?raw=true)
 
 # Tips & Tricks 
 - If you want to create a directory and you don't have time to do so, create a new powershell file, and there write something like : 
