@@ -29,3 +29,16 @@
 ### Added
 - We added the ability to comment code from the context menu of the active text editor.
 - We added the ability to complete the code using chatgpt from the context menu of the text editor (we will add more functionalities in the coming days)
+
+## [1.1.1] - 2023-07-31
+### Removed
+- We removed the text decorator when you execute a command from the context menu (option chatgpt)
+
+## [1.1.2] - 2023-08-4
+### Fixed
+- We fixed a problem related to sending thinking when chatgpt still answering.
+
+## [1.2.0] - 2023-08-09
+### Added
+- We added a a sidebar to make some commands more accessible.
+- We added some accessibility features, specially the ability to increase and decrease the font size.
