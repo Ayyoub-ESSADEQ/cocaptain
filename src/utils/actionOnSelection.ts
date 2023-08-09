@@ -8,17 +8,11 @@ export default async function actionOnSelection(prompt : string){
     if (activeTextEditor) {
         const selection = activeTextEditor.selection;
         const selectionRange = new vscode.Range(selection.start,selection.end);
-        const selected = vscode.window.createTextEditorDecorationType({
-            backgroundColor : "var(--vscode-editor-selectionBackground)",
-            borderRadius : "2px"
-        });
-        activeTextEditor.setDecorations(selected, [selectionRange]);
         const selectedText = activeTextEditor.document.getText(selection);
         const answer : any = await retrieveAnswer(prompt + " " + selectedText);
         const codeBlock = extractCodeBlock(answer);
         activeTextEditor.edit((editBuilder)=>{
             editBuilder.replace(selectionRange, codeBlock?codeBlock:selectedText);
-            selected.dispose();
         });
     }
     else{

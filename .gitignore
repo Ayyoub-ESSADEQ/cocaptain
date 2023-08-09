@@ -1,7 +1,6 @@
 .chatgpt
-chatGPT.json
 *.vsix
+
+chatgpt.json
 node_modules
 dist
-.vscode
-.vscodeignore

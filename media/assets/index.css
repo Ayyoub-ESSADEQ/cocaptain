@@ -1,14 +1,14 @@
 :root {
     --border-radius: 5px;
     --background-color: var(--vscode-sideBar-background);
-    --text-color : var(--vscode-editor-foreground);
+    --text-color: var(--vscode-editor-foreground);
     --margin-bottom: -10px;
     --padding: 5px;
     --padding-answer-card: 10px;
     --border-radius-answer: 5px;
     --font-color-answer: var(--vscode-editor-foreground);
     --background-answer-color: var(--vscode-editor-background);
-    --font-size: 13px;
+    --font-size-chatgpt: 13px;
 
     --question-padding: 10px;
     --question-border-radius: 5px;
@@ -17,7 +17,7 @@
     --card-width: 100%;
 
     --frame-bg-color: var(--vscode-statusBar-background);
-    --frame-font-color : var(--vscode-banner-foreground);
+    --frame-font-color: var(--vscode-banner-foreground);
 
     --message-font-color: var(--vscode-input-foreground);
     --message-send: 30px;
@@ -26,11 +26,19 @@
     --message-card-bg-color: var(--vscode-sideBar-background);
 
     --error-bg-color: rgba(190, 108, 108, .73);
-    --shadow-color : var(--vscode-widget-shadow);
+    --shadow-color: var(--vscode-widget-shadow);
     --icon-size: 18px;
-    --icon-color: white;
-    --border-color : var(--vscode-sideBar-border);
-    --border-width : 1px;
+    --icon-color: var(--vscode-icon-foreground);
+    --border-color: var(--vscode-sideBar-border);
+    --border-width: 1px;
+
+    /*--border-color : ;*/
+    --vertical-bar-width-chatgpt: 44px;
+    --icon-l : 18px;
+
+    /*Tooltip */
+    --tooltip-bc-chatgpt : var(--vscode-editor-background);
+    --tooltip-border-color : var(--vscode-sideBar-border);
 }
 
 @font-face {
@@ -48,7 +56,7 @@ body {
     background-color: var(--background-color);
     color: #fff;
     padding: 8px;
-    font-size: var(--font-size);
+    font-size: var(--font-size-chatgpt);
     font-family: Montserrat-Regular;
     max-width: var(--card-width)
 }
@@ -131,7 +139,7 @@ body {
     border-bottom-left-radius: var(--question-border-radius);
     border-bottom-right-radius: var(--question-border-radius);
     background-color: var(--question-bg-color);
-    color : var(--font-color-answer);
+    color: var(--font-color-answer);
     border-style: solid;
     border-top-style: none !important;
     border-width: var(--border-width);
@@ -153,10 +161,10 @@ body {
 .askCard {
     position: fixed;
     bottom: 0px;
-    left: 0px;
     display: flex;
     min-height: var(--message-send);
-    width: var(--card-width);
+    left: var(--vertical-bar-width-chatgpt);
+    width: calc(var(--card-width) - var(--vertical-bar-width-chatgpt));
     background-color: var(--message-card-bg-color);
     z-index: 101;
     border-top-color: #868686;
@@ -298,7 +306,7 @@ body {
     background: transparent
 }
 
-.blocker{
+.blocker {
     display: flex;
     position: fixed;
     align-items: center;
@@ -310,28 +318,113 @@ body {
     background-color: var(--background-color);
     z-index: 300;
     backdrop-filter: blur(2px);
-  }
-  
-  .warn{
+}
+
+.warn {
     display: flex;
     justify-content: center;
-    height : fit-content;
-    width : 250px;
+    height: fit-content;
+    width: 250px;
     padding: 5px;
     background-color: #E5FAFD;
-    color : var(--background-color);
+    color: var(--background-color);
     border-radius: 5px;
-    gap : 15px;
+    gap: 15px;
     filter: drop-shadow(0px 0px 20px #ffd8a171);
-  }
-  
-  .warnBtn {
-    width : 20px;
-    height : 20px;
+}
+
+.warnBtn {
+    width: 20px;
+    height: 20px;
     background-color: red;
-  }
-  
-  .warnText{
-    width : 200px;
-    font-size : 12px;
-  }
+}
+
+.warnText {
+    width: 200px;
+    font-size: 12px;
+}
+
+/*The options page where you could change the properties of the conversation*/
+
+.options {
+    position: fixed;
+    height: 100%;
+    width: calc(var(--vertical-bar-width-chatgpt) - 1px);
+    background-color: var(--background-secondary);
+    left: 0px;
+    top: 0px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--border-color);
+}
+
+.vertical-bar-options {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+    gap: var(--size-2-3);
+}
+
+.vertical-bar-support {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    padding-top: 8px;
+    gap: var(--size-2-3);
+    bottom: 10px;
+}
+
+.link-chatgpt {
+    color: var(--icon-color);
+}
+
+.link-chatgpt:hover {
+    color: var(--icon-color);
+}
+
+#container-chatgpt {
+    background-color: var(--background-color);
+    color: #fff;
+    padding: 8px;
+    font-size: var(--font-size-chatgpt);
+    font-family: Montserrat-Regular;
+    max-width: var(--card-width);
+    padding-left: calc(var(--vertical-bar-width-chatgpt) + 5px);
+    overflow-x: hidden;
+}
+
+.clickable-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 6px;
+    cursor: pointer;
+    border-radius: 4px;
+    height: auto;
+    color : var(--vscode-icon-foreground);
+}
+
+.clickable-icon::after{
+    transform: scale(0);
+    content: "";
+    transition-property: transform;
+    transform-origin: center;
+    transition-duration: 50ms;
+    transition-delay: 300ms;
+    transition-timing-function: ease-out;
+}
+
+.clickable-icon:hover::after{
+    display: block;
+    position:absolute;
+    left : var(--vertical-bar-width-chatgpt);
+    content: attr(aria-label);
+    z-index: 3000;
+    background-color: var(--vscode-editor-background);
+    border : var(--border-width) solid var(--border-color);
+    padding: 3px;
+    border-radius: 3px;
+    transform: scale(1);
+}
